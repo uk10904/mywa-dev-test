@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+#toolbar_holder{
+	display:none; width:100%;  height:auto; background-color:#0070FF;  border-bottom:solid #FFF; box-shadow: 1px 1px 2px 2px #242888; overflow:hidden
+}
+#toolbar{
+	width:90%; height:auto; color:#FFF; text-align:center; font-weight:bold; float:left;line-height:30px;
+	}
+
+#toolbar a{
+	background-color:#FFF;
+	padding-left:2px;
+	padding-right:2px;
+	color:#000;
+	
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	}
+	
+#hidetoolbar{
+	height:30px; width:30px; background-color:#F33; color:#FFF; float:right; font-size:medium; cursor:pointer; text-align:center;font-weight:bold; line-height:30px;
+}

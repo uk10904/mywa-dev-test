@@ -1,0 +1,208 @@
+@charset "utf-8";
+/* CSS Document */
+#fluid_notification_bar_wrapper{
+	display:none;
+	width:100%;
+	height:auto;
+	background-color:#0070FF;
+	border-bottom:solid thin #FFF;
+	box-shadow: 0px 0px 1px 1px #242888;
+	overflow:hidden;
+	z-index: 9999999;
+	position: fixed;
+	top: 0;
+
+	/*background: #5accf5;*/
+
+}
+#fluid_notification_bar{
+	visibility: hidden;
+	width:90%;
+	height:auto;
+	/*color:#FFF;*/
+	text-align:center;
+	font-weight:bold;
+	float:left;
+	line-height:30px;
+	padding: 8px;
+}
+
+#fluid_notification_bar a{
+	text-decoration:none !important;
+}
+
+#fluid_notification_bar .fnbar_link{
+	opacity: 0;
+	background-color:#FFF;
+	padding: 3px 10px;
+	margin: 8px;
+	color:#039AD5;
+	font-weight:normal;
+
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+}
+
+#fluid_notification_bar .fnbar_link:hover{
+	background: #ffffff;
+
+	/* Old Browsers */background: -moz-linear-gradient(top, #ffffff 0%, #bffffc 100%);
+	/* FF3.6+ */background: -webkit-gradient(left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #bffffc));
+	/* Chrome,Safari4+  */background: -webkit-linear-gradient(top, #ffffff 0%, #bffffc 100%);
+	/* Chrome10+,Safari5.1+ */background: -o-linear-gradient(top, #ffffff 0%, #bffffc 100%);
+	/* Opera 11.10+ */background: -ms-linear-gradient(top, #ffffff 0%, #bffffc 100%);
+	/* IE 10+ */background: linear-gradient(to bottom, #ffffff 0%, #bffffc 100%);
+	/* W3C */filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#bffffc', GradientType=0 );
+	/* IE6-9 */
+}
+
+#hide_fluid_notification_bar{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 8px;
+	width: 30px;
+	cursor: pointer;
+}
+
+/*----------------------
+Social media icons
+-----------------------*/
+@font-face {
+    font-family: 'si';
+    src: url('fonts/socicon.eot');
+    src: url('fonts/socicon.eot?#iefix') format('embedded-opentype'),
+         url('fonts/socicon.woff') format('woff'),
+         url('fonts/socicon.ttf') format('truetype'),
+         url('fonts/socicon.svg#icomoonregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family:si;
+        src: url(fonts/socicon.svg) format(svg);
+    }
+}
+
+.soc {
+    overflow:hidden;
+    margin:0; padding:0;
+    list-style:none;
+
+		display: inline;
+		margin-left: 10px;
+}
+
+.soc li {
+    display:inline-block;
+    *display:inline;
+    zoom:1;
+
+		opacity: 0;
+		vertical-align: middle;
+		margin-top: -20px;
+}
+
+.soc li a {
+    font-family:si!important;
+    font-style:normal;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -o-box-sizing:border-box;
+    box-sizing:border-box;
+
+    -o-transition:.1s;
+    -ms-transition:.1s;
+    -moz-transition:.1s;
+    -webkit-transition:.1s;
+    transition:.1s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+
+    overflow:hidden;
+    text-decoration:none;
+    text-align:center;
+    display:block;
+    position: relative;
+    z-index: 1;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 13px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    margin-right: 8px;
+    color: #ffffff;
+    background-color: none;
+}
+
+.soc a:hover {
+    z-index: 2;
+
+}
+
+.soc-icon-last{
+    margin:0 !important;
+}
+
+.soc-google {
+    background-color: #d93e2d;
+}
+.soc-google:before {
+    content:'c';
+}
+.soc-facebook {
+    background-color: #3e5b98;
+}
+.soc-facebook:before {
+    content:'b';
+}
+.soc-twitter {
+    background-color: #4da7de;
+}
+.soc-twitter:before {
+    content:'a';
+}
+.soc-pinterest {
+    background-color: #c92619;
+}
+.soc-pinterest:before {
+    content:'d';
+}
+.soc-linkedin {
+    background-color: #3371b7;
+}
+.soc-linkedin:before {
+    content:'j';
+}
+
+.soc-google:hover {
+    background-color: #c52a19;
+}
+.soc-facebook:hover {
+    background-color: #2a4784;
+}
+.soc-twitter:hover {
+    background-color: #3993ca;
+}
+.soc-pinterest:hover {
+    background-color: #b51205;
+}
+.soc-linkedin:hover {
+    background-color: #1f5da3;
+}
