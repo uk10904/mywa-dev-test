@@ -8,6 +8,13 @@ require_once( get_template_directory() . '/lib/init.php' );
  * If you are using LESS, make sure to enable development mode via the Admin->Appearance->Settings option. LESS will then be processed on the fly.
  */
 
+ function is_localhost() {
+    $whitelist = array( '127.0.0.1', '::1' );
+    if( in_array( $_SERVER['REMOTE_ADDR'], $whitelist) )
+        return true;
+}
+ $devPrefix = is_localhost() ? '/mywa' : '';
+
 add_action( 'beans_uikit_enqueue_scripts', 'beans_child_enqueue_uikit_assets' );
 
 function beans_child_enqueue_uikit_assets() {
@@ -51,7 +58,7 @@ foreach ($stickyposts as $post) : setup_postdata($post);
  $return .= '<div style="bottom:0; background:'.$colors[$i].'" class="uk-overlay uk-overlay-hover feedback-element uk-width-1-2 uk-width-small-1-2 uk-width-large-1-2 uk-grid-margin" data-element-name="'.$title.'">';
 
 // $return .= '<img class="uk-overlay-scale" src="'.$resized_src.'" height="" alt="">';
-$return .= '<img class="uk-overlay-scale" src="/mywa/wp-content/uploads/2016/11/3d-effect.png" height="" alt="">';
+$return .= '<img class="uk-overlay-scale" src="'.$devPrefix.'/wp-content/uploads/2016/11/3d-effect.png" height="" alt="">';
 
  // $return .= '<figcaption class="uk-overlay-panel uk-overlay-top uk-ignore">';
  $return .= '<figcaption class="uk-overlay-panel uk-flex uk-flex-center uk-flex-middle uk-text-center uk-ignore">';
@@ -281,7 +288,7 @@ $simpleFeedbackForm = do_shortcode('[formidable id=15]');
 $feedbackList = get_field('feedback_options');
 $signUpModal = <<<HTML
 <div class="uk-button-dropdown feedback-btn" data-uk-dropdown="{mode:'click', pos:'left-center'}" aria-haspopup="true" aria-expanded="false">
-   <a class="" data-uk-modal="{center:true}"><img src="/mywa/wp-content/uploads/2016/11/feedback.png" /></a>
+   <a class="" data-uk-modal="{center:true}"><img src="<?php echo $devPrefix ?>/wp-content/uploads/2016/11/feedback.png" /></a>
    <div class="uk-dropdown feedback-options" aria-hidden="true">
                                        
                                                      $feedbackList                          
@@ -491,7 +498,7 @@ function beans_child_home_add_cover() {
     $caption = wp_get_attachment_caption($imageIDs[$randNo]);
 ?>
 <style>
-  body {background-image:url(/mywa/wp-content/uploads/<?php print $imgMeta['_wp_attached_file'][0]; ?>)}
+  body {background-image:url(<?php echo $devPrefix ?>/wp-content/uploads/<?php print $imgMeta['_wp_attached_file'][0]; ?>)}
 </style>
     <!--<div class="userPhoto hide-600"><a data-uk-modal="{center:true}" href="#bg-image-social"><i class="uk-icon-camera"></i> <?php  print $caption; ?></a></div> -->
     <div class="userPhoto hide-600"><i class="uk-icon-camera"></i> <?php  print $caption; ?></div>
