@@ -1,0 +1,46 @@
+# Keep these files out of the repo
+*.sql
+*.log
+wp-config.php
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/wp-cache-config.php
+wp-content/plugins/hello.php
+wp-content/themes/twenty*
+wp-content/upgrade
+wp-content/uploads
+
+license.txt
+readme.html
+sitemap.xml
+sitemap.xml.gz
+
+# Hidden files
+*.DS_Store
+*Thumbs.db
+*.sass-cache*
+*~imageoptim*
+*.vscode
+
+# ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# track favicon files, if they exist
+!android-chrome-*.png
+!apple-touch-icon*.png
+!browserconfig.xml
+!favicon*.png
+!favicon*.ico
+!manifest.json
+!mstile-*.png
+!safari-pinned-tab.svg
