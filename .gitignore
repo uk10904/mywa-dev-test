@@ -13,6 +13,7 @@ wp-content/themes/twenty*
 wp-content/upgrade
 wp-content/uploads
 wp-content/updraft
+wp-content/uploads/asp_upload/*
 
 license.txt
 readme.html
