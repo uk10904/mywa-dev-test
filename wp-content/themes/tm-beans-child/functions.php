@@ -4,7 +4,7 @@
 require_once( get_template_directory() . '/lib/init.php' );
 
 /*
- * Remove this action and callback function if you do not whish to use LESS to style your site or overwrite UIkit variables.
+ * Cleanup Remove this action and callback function if you do not whish to use LESS to style your site or overwrite UIkit variables.
  * If you are using LESS, make sure to enable development mode via the Admin->Appearance->Settings option. LESS will then be processed on the fly.
  */
  function is_localhost() {
