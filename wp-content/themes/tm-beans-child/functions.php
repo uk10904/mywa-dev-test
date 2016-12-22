@@ -4,16 +4,15 @@
 require_once( get_template_directory() . '/lib/init.php' );
 
 /*
- * Remove this action and callback function if you do not whish to use LESS to style your site or overwrite UIkit variables.
+ * Cleanup Remove this action and callback function if you do not whish to use LESS to style your site or overwrite UIkit variables.
  * If you are using LESS, make sure to enable development mode via the Admin->Appearance->Settings option. LESS will then be processed on the fly.
  */
-
  function is_localhost() {
     $whitelist = array( '127.0.0.1', '::1' );
     if( in_array( $_SERVER['REMOTE_ADDR'], $whitelist) )
         return true;
 }
- $devPrefix = is_localhost() ? '/mywa' : '';
+$devPrefix = is_localhost() ? '/mywa' : '';
 
 add_action( 'beans_uikit_enqueue_scripts', 'beans_child_enqueue_uikit_assets' );
 
@@ -33,7 +32,8 @@ function edit_footer_credit_right_text() {
 
 
 function display_portals() {
-    	global $post;
+
+    	global $post, $devPrefix;
 $args = array( 'category' => 8, 'numberposts' => 4);
 $stickyposts = get_posts( $args );
 
@@ -260,7 +260,7 @@ function abovenav_widget_area() {
 
 
 function add_below_footer() {
-
+global $devPrefix;
 
     if( wp_is_mobile()) {
 
@@ -288,7 +288,7 @@ $simpleFeedbackForm = do_shortcode('[formidable id=15]');
 $feedbackList = get_field('feedback_options');
 $signUpModal = <<<HTML
 <div class="uk-button-dropdown feedback-btn" data-uk-dropdown="{mode:'click', pos:'left-center'}" aria-haspopup="true" aria-expanded="false">
-   <a class="" data-uk-modal="{center:true}"><img src="<?php echo $devPrefix ?>/wp-content/uploads/2016/11/feedback.png" /></a>
+   <a class="" data-uk-modal="{center:true}"><img src="$devPrefix/wp-content/uploads/2016/11/feedback.png" /></a>
    <div class="uk-dropdown feedback-options" aria-hidden="true">
                                        
                                                      $feedbackList                          
@@ -445,6 +445,8 @@ function beans_child_home_add_description() {
 
 add_action( 'beans_header_after_markup', 'beans_child_home_add_cover' );
 function beans_child_home_add_cover() {
+    global $devPrefix;
+
     global $post;
     $value = get_field( "above_main_content", $post->ID ) ? get_field( "above_main_content", $post->ID ) : "";
  ?>
