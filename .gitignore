@@ -13,7 +13,7 @@ wp-content/themes/twenty*
 wp-content/upgrade
 wp-content/uploads
 wp-content/updraft
-wp-content/uploads/asp_upload/*
+wp-content/uploads/asp_upload/style.instances.css
 
 license.txt
 readme.html
