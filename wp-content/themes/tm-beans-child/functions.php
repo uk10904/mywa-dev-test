@@ -14,8 +14,6 @@ require_once( get_template_directory() . '/lib/init.php' );
 }
 $devPrefix = is_localhost() ? '/mywa' : '';
 
-define( 'WP_CACHE', true );
-
 add_action( 'beans_uikit_enqueue_scripts', 'beans_child_enqueue_uikit_assets' );
 
 function beans_child_enqueue_uikit_assets() {
@@ -31,7 +29,14 @@ function edit_footer_credit_right_text() {
 
 }
 
-
+/* trigger actions for mailchimp form */
+add_filter('frm_use_embedded_form_actions', 'frm_trigger_embedded_form_actions', 10, 2);
+function frm_trigger_embedded_form_actions( $trigger_actions, $args ) {
+    if ( $args['form']->id == 10 ) {
+        $trigger_actions = true;
+    }
+    return $trigger_actions;
+}
 
 function display_portals() {
 
