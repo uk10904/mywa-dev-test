@@ -14,6 +14,8 @@ require_once( get_template_directory() . '/lib/init.php' );
 }
 $devPrefix = is_localhost() ? '/mywa' : '';
 
+define( 'WP_CACHE', true );
+
 add_action( 'beans_uikit_enqueue_scripts', 'beans_child_enqueue_uikit_assets' );
 
 function beans_child_enqueue_uikit_assets() {
