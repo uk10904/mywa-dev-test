@@ -41,7 +41,7 @@ foreach ($categories as $category){
    $pos = strpos($url, 'http');
 
     $title = get_the_title($post->ID);
-    $html .=  '<li><a href="'.$http.$url.'">'. $title .'</a></li>';
+    $html .=  '<li><a target="_blank" href="'.$http.$url.'">'. $title .' <i class="uk-icon-external-link"></i></a></li>';
 
 
 

@@ -28,7 +28,6 @@ function edit_footer_credit_right_text() {
 	return '';
 
 }
-
 /* trigger actions for mailchimp form */
 add_filter('frm_use_embedded_form_actions', 'frm_trigger_embedded_form_actions', 10, 2);
 function frm_trigger_embedded_form_actions( $trigger_actions, $args ) {
@@ -423,7 +422,7 @@ function beans_child_home_add_title() {
 	
 		?>
 		<div style="display:none;" class="uk-container uk-container-center">
-			<h1>Added Title</h1>
+			<h1>myWA</h1>
 		</div>
 		<?php
 	
