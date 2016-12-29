@@ -17,6 +17,8 @@ function frmThemeOverride_frmAfterSubmit(formReturned, pageOrder, errObj, object
 
 jQuery(function($) {
 
+   
+
 
     UIkit.domObserve('body', function(element) {
       // jQuery('.uk-fade-in').addClass('uk-show');
@@ -147,11 +149,17 @@ $('#element-feedback-form').on('click','input[type="checkbox"]',function() {
         $(this).closest('label').toggleClass('checked');
     }
 });
+
 $('#element-feedback-form').on('click','input[type="radio"]',function() {
     $(this).closest('.frm_opt_container').find('label').removeClass('checked');
     $(this).closest('label').addClass('checked');
 });
-
+/*send form page number as event*/
+ $('#element-feedback-form').on('click','input[type="submit"]',  function() {
+      var classes = $('.frm_form_fields').attr('class').split('_');
+      var page = parseInt(classes[classes.length -1]) + 1;
+      ga('send', 'event', 'form', 'Sitewide Feedback Page', '' + page);
+    });
 jQuery('.proinput form').prepend('<span class="typed"></span>');
 		var typed = jQuery(".typed").typed({
 			strings: ["Find a health service", "Check driver licence details", "Pay for your car registration","Watch live coastal cameras", "Apply for a National Police Certificate"],
